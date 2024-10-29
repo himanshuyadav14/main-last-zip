@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import HeaderSideBar from "./HeaderSideBar";
+import Image from "next/image";
 
 const HeaderContent = ({ headerData }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -20,10 +21,12 @@ const HeaderContent = ({ headerData }) => {
                   <div className="site-branding">
                     <h1 className="site-title">
                       <Link href="/">
-                        <img
+                        <Image
                           className="logo-img header-logo"
                           src={headerData?.logo_image}
                           alt="header"
+                          width={500} // Add appropriate width
+                          height={100} // Add appropriate height
                         />
                       </Link>
                     </h1>
@@ -82,13 +85,12 @@ const HeaderContent = ({ headerData }) => {
                           {headerData?.data?.map((header, index) => (
                             <li key={index}>
                               <Link
-                                className="underline-none"
+                                className="underline-none navigation clearfix"
                                 href={header?.page_url}
                                 style={{
                                   fontSize: "12px",
                                   marginTop: "17px",
                                 }}
-                                className="navigation clearfix"
                               >
                                 {/* <h1
                                   style={{
@@ -97,7 +99,7 @@ const HeaderContent = ({ headerData }) => {
                                   }}
                                   className="navigation clearfix"
                                 > */}
-                                  {header?.page_name}
+                                {header?.page_name}
                                 {/* </h1> */}
                               </Link>
                             </li>
