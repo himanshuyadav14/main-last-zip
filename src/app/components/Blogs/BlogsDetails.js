@@ -98,14 +98,12 @@ const BlogsDetails = ({ blogsData }) => {
                             }}
                           />
                         </div>
-                        <button 
+                        <button
                           className="pbmit-btn"
                           onClick={() => handleReadMore(blog.blog_title)}
                         >
                           <span className="pbmit-button-content-wrapper">
-                            <span className="pbmit-button-text">
-                              Read More
-                            </span>
+                            <span className="pbmit-button-text">Read More</span>
                           </span>
                         </button>
                       </div>
@@ -139,22 +137,26 @@ const BlogsDetails = ({ blogsData }) => {
                   <ul className="recent-post-list">
                     {blogsData?.slice(0, 3)?.map((post, index) => (
                       <li key={index} className="recent-post-list-li">
-                        <Link href={`/blogs/${createSlug(post.blog_title)}`}>
-                          <Image
-                            src={post.blog_image}
-                            className="img-fluid"
-                            alt={post.blog_image_alt_text}
-                            width={100}
-                            height={100}
-                          />
-                        </Link>
-                        <Link href={`/blogs/${createSlug(post.blog_title)}`}>
-                          <div className="pbmit-rpw-content">
-                            <span className="pbmit-rpw-title">
-                              {post.blog_title}
-                            </span>
-                          </div>
-                        </Link>
+                        <Image
+                          src={post.blog_image}
+                          className="img-fluid"
+                          alt={post.blog_image_alt_text}
+                          width={100}
+                          height={100}
+                          style={{ cursor: "pointer" }} // Ensure the image is clickable
+                          onClick={() => handleReadMore(post.blog_title)} // Attach click handler
+                        />
+                        {/* <Link href={`/blogs/${createSlug(post.blog_title)}`}> */}
+                        <div
+                          className="pbmit-rpw-content"
+                          onClick={() => handleReadMore(post.blog_title)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          <span className="pbmit-rpw-title" style={{ textDecoration: 'underline' }}>
+                            {post.blog_title}
+                          </span>
+                        </div>
+                        {/* </Link> */}
                       </li>
                     ))}
                   </ul>

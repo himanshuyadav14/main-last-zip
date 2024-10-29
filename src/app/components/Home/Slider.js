@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -33,12 +32,6 @@ const Slider = async ({ pageName, showContactButton }) => {
   }
   return (
     <>
-      <Head>
-        {/* Preload the background image */}
-        {/* {filteredSlides[0]?.image && (
-          <link rel="preload" href={filteredSlides[0].image} as="image" />
-        )} */}
-      </Head>
       <div className="pbmit-slider-area pbmit-slider-three">
         <div
           className="swiper-slider"

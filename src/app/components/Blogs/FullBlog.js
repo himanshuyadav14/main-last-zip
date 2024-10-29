@@ -7,14 +7,20 @@ import { useRouter} from "next/navigation";
 
 const FullBlog = ({ blog, onBack, blogsData, handleReadMore }) => {
     const router = useRouter();
+    const [loading, setLoading] = useState(false);
+
     if (!blog) return null;
 
     const handleAllBlogsClick = () => {
-        router.push("/blogs");
+        setLoading(true); // Set loading to true when button is clicked
+        setTimeout(() => {
+            router.push("/blogs");
+        }, 1000); // Adjust the time as needed for the loading effect
     };
 
     return (
         <section className="site_content full_blog">
+            {loading && <div className="loader"></div>} {/* Loader Component */}
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 col-lg-9 blog-right-col">
