@@ -1,0 +1,68 @@
+/* HeaderSidebar.module.css */
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Light background color */
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    padding: 20px; /* Padding for inner content */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.navigation.open {
+    transform: translateX(0);
+}
+
+.navigation .closepanel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.navigation .closepanel:hover {
+    transform: rotate(180deg); /* Visual indication on hover */
+}
+
+.navigation ul.navigation-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.navigation ul.navigation-list.open {
+    background-color: rgba(255, 255, 255, 0.98); /* Slightly darker background when open */
+}
+
+.navigation ul.navigation-list li {
+    margin-bottom: 15px;
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.navigation ul.navigation-list li:hover {
+    transform: translateX(5px); /* Visual hover effect */
+}
+
+.navigation ul.navigation-list li a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navigation ul.navigation-list li a:hover {
+    background-color: #f0f0f0; /* Light background on hover */
+    color: #555555; /* Darker text on hover */
+}
