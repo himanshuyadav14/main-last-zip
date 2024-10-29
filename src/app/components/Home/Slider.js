@@ -35,9 +35,9 @@ const Slider = async ({ pageName, showContactButton }) => {
     <>
       <Head>
         {/* Preload the background image */}
-        {filteredSlides[0]?.image && (
+        {/* {filteredSlides[0]?.image && (
           <link rel="preload" href={filteredSlides[0].image} as="image" />
-        )}
+        )} */}
       </Head>
       <div className="pbmit-slider-area pbmit-slider-three">
         <div

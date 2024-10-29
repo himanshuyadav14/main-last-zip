@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter} from "next/navigation";
 
 const FullBlog = ({ blog, onBack, blogsData, handleReadMore }) => {
+    const router = useRouter();
     if (!blog) return null;
 
     const handleAllBlogsClick = () => {
-        onBack();
+        router.push("/blogs");
     };
 
     return (
@@ -48,7 +50,7 @@ const FullBlog = ({ blog, onBack, blogsData, handleReadMore }) => {
                     <div className="col-md-12 col-lg-3 blog-left-col">
                         <aside className="sidebar">
                             <aside className="widget widget-recent-post">
-                                <h2 className="widget-title">Recent Post</h2>
+                                <h2 className="widget-title">Post</h2>
                                 <ul className="recent-post-list">
                                     {blogsData?.slice(0, 3)?.map((post, index) => (
                                         <li key={index} className="recent-post-list-li" onClick={() => handleReadMore(post)}>

@@ -27,6 +27,7 @@ const HeaderContent = ({ headerData }) => {
                           alt="header"
                           width={500} // Add appropriate width
                           height={100} // Add appropriate height
+                          prefetch={true}
                         />
                       </Link>
                     </h1>
