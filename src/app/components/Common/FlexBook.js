@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 
 const FlexBookLink = () => {
@@ -40,8 +40,21 @@ const FlexBookLink = () => {
           style={{ border: '0', width: "140px" }} // Note the change in style attribute syntax
         />
       </a> */}
-      <button onClick={handleBookingClick}>
-        Book an Appointment
+      <button
+        onClick={handleBookingClick}
+        style={{
+          border: "none",
+          background: "none",
+          padding: 0,
+          outline: "none",
+        }}
+      >
+        <img
+          src="https://offsiteSchedule.zocdoc.com/images/remote/zd_bookonline_162x48.png?type=bobhtml&monolith_provider_id=106503&practice_id=pt_Jf-AWn_B-USaYnLXz7Bj7B"
+          alt="Smilecloud Family Dental"
+          title="Smilecloud Family Dental"
+          style={{ border: "0", width: "140px" }} // Note the change in style attribute syntax
+        />
       </button>
     </div>
   );
