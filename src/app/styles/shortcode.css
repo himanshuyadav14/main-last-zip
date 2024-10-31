@@ -3794,7 +3794,6 @@
 }
 .pbmit-slider-area {
     position: relative; /* Needed for the absolute positioning of the child */
-    height: 100vh; /* Full viewport height, adjust as needed */
 }
 .pbmit-slider-area .pbmit-slider-bg{
 	position: absolute;
