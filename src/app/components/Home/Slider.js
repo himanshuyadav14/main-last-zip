@@ -48,18 +48,18 @@ const Slider = async ({ pageName, showContactButton }) => {
               <div className="item">
                 <div
                   className="pbmit-slider-item"
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "auto",
-                  }}
+                  // style={{
+                  //   position: "relative",
+                  //   width: "100%",
+                  //   height: "auto",
+                  // }}
                 >
                   <div
                     className="pbmit-slider-bg"
                     style={{
                       backgroundImage: `url(${filteredSlides[0]?.image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
+                      // backgroundSize: "cover",
+                      // backgroundPosition: "center",
                     }}
                   ></div>
 
